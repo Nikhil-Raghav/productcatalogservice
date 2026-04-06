@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "nikhilraghav08/productcatalogservice:${GIT_COMMIT}"
+        IMAGE_NAME = "manojkrishnappa/productcatalogservice:${GIT_COMMIT}"
     }
 
     stages {
@@ -58,7 +58,7 @@ pipeline {
                             echo "gitops directory exists. Removing it..."
                             rm -rf gitops
                         fi
-                        git clone https://$GIT_USERNAME:$GIT_PASSWORD@github.com/ITkannadigaru/GitOps.git gitops
+                        git clone https://$GIT_USERNAME:$GIT_PASSWORD@github.com/Nikhil-Raghav/GitOps.git gitops
                         cd gitops/base/productcatalogservice/
 
                         git config user.email "jenkins@ci.com"
